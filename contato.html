@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DQL — Decor em Qualquer Lugar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Topo / Navbar -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="img/logo-placeholder.png" alt="DQL - Decor em Qualquer Lugar" class="logo">
+      <span class="brand-text"><strong>ARQUITETURA E DESGIN DE INTERIOR</strong> <small>A sua ideia cabe em qualquer lugar</small></span>
+    </a>
+
+    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+          <li><a href="index.html" class="btn-cta">Home</a></li>
+          <li><a href="sobre.html" class="btn-cta">Sobre</a></li>
+          <li><a href="projetos.html" class="btn-cta">Projetos</a></li>
+          <li><a href="servicos.html" class="btn-cta">Serviços</a></li>
+          <li><a href="contato.html" class="btn-cta">Contato</a></li>
+        </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Conteúdo -->
+<main class="container">
+  <h1>Contato</h1>
+  <p>Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
+
+  <form id="contactForm">
+
+    <label for="nome">Seu Nome:</label><br>
+    <input type="text" id="nome" name="nome" required style="width:100%;padding:10px;margin-bottom:10px"><br>
+
+   <label for="email">Seu E-mail:</label><br>
+<input 
+    type="email" 
+    id="email" 
+    name="email" 
+    required 
+    placeholder="exemplo@dominio.com"
+    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    title="Digite um e-mail válido. Ex: exemplo@dominio.com"
+    style="width:100%;padding:10px;margin-bottom:10px"
+><br>
+<small>Ex: usuario@dominio.com</small>
+
+
+    <label for="telefone">Seu Telefone:</label><br>
+<input 
+    type="tel" 
+    id="telefone" 
+    name="telefone" 
+    placeholder="+55 (21) 91234-5678" 
+    pattern="^\+?\d{0,3}\s?\(?\d{2}\)?\s?\d{4,5}-?\d{4}$"
+    title="Digite o telefone no formato: +55 (DD) 9XXXX-XXXX" 
+    style="width:100%;padding:10px;margin-bottom:10px" 
+    required
+><br>
+<small>Inclua o DDD e, se possível, o código do país. Ex: +55 (21) 91234-5678</small>
+
+
+    <label>Serviços desejados:</label><br>
+    <input type="checkbox" name="servicos" value="Quero indicações de revestimentos (piso/parede)"> Quero indicações de revestimentos (piso/parede)<br>
+    <input type="checkbox" name="servicos" value="Quero indicações de objetos de decoração"> Quero indicações de objetos de decoração<br>
+    <input type="checkbox" name="servicos" value="Topo Obra: Eliminar, alterar ou construir paredes"> Assunto Obra: Eliminar, alterar ou construir paredes<br>
+    <input type="checkbox" name="servicos" value="Incluir imóveis planejados/marcenaria"> Incluir imóveis planejados/marcenaria<br>
+    <input type="checkbox" name="servicos" value="Incluir Projeto de iluminação"> Incluir Projeto de iluminação<br>
+    <input type="checkbox" name="servicos" value="Incluir projeto de forro de gesso"> Incluir projeto de forro de gesso<br>
+    <input type="checkbox" name="servicos" value="Incluir projeto de forro de drywall"> Incluir projeto de forro de drywall<br><br>
+
+    <label for="metragem">Metragem da Planta:</label><br>
+    <select id="metragem" name="metragem" required style="width:100%;padding:10px;margin-bottom:10px">
+      <option value="">Selecione</option>
+      <option>30m² a 48m²</option>
+      <option>49m² a 58m²</option>
+      <option>59m² a 68m²</option>
+      <option>69m² a 88m²</option>
+      <option>89m² a 110m²</option>
+      <option>Acima de 110m²</option>
+    </select><br>
+
+    <label for="mensagem">Mensagem (opcional):</label><br>
+    <textarea id="mensagem" name="mensagem" rows="5" style="width:100%;padding:10px;margin-bottom:10px"></textarea><br>
+
+    <button type="submit" class="btn-primary" style="padding:12px 18px;border-radius:8px">Enviar</button>
+  </form>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <p>© 2025 Decor em Qualquer Lugar - Todos os direitos reservados</p>
+    <div class="social-icons">
+      <a href="https://wa.me/5599999999999" target="_blank" class="whatsapp" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://instagram.com/seuperfil" target="_blank" class="instagram" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://pinterest.com/seuperfil" target="_blank" class="pinterest" title="Pinterest">
+        <i class="fab fa-pinterest"></i>
+      </a>
+      <a href="https://facebook.com/seuperfil" target="_blank" class="facebook" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/form.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  // Captura múltiplos checkboxes de "serviços"
+  const servicos = [];
+  form.querySelectorAll('input[name="servicos"]:checked').forEach(el => servicos.push(el.value));
+
+  const data = {
+    nome: formData.get("nome"),
+    email: formData.get("email"),
+    telefone: formData.get("telefone"),
+    tipo_projeto: formData.get("tipo_projeto") || "",
+    metragem: formData.get("metragem"),
+    servicos,
+    mensagem: formData.get("mensagem")
+  };
+
+  try {
+    const response = await fetch("/enviar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    alert(result.ok ? "✅ Mensagem enviada com sucesso!" : "⚠️ Erro ao enviar mensagem.");
+    form.reset();
+  } catch (error) {
+    alert("❌ Erro de conexão com o servidor.");
+  }
+});
+</script>
+
+</body>
+</html>
